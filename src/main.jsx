@@ -12,24 +12,26 @@ import Homee from './typeofpainting/Homee.jsx'
 import Mycard from './Mycard/Mycard.jsx'
 
 // Setup router
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        { path: '', element: <Home /> },
+        { path: 'about', element: <About /> },
+        { path: 'contact', element: <Contact /> },
+        { path: 'Mycard', element: <Mycard /> },
+        { path: 'child', element: <Child /> },
+        { path: 'hotel', element: <Hotel /> },
+        { path: 'home', element: <Homee /> }
+      ]
+    }
+  ],
   {
-    path: '/',
-    element: <Layout />,
-    children: [
-      { path: '', element: <Home /> },
-      { path: 'about', element: <About /> },
-      { path: 'contact', element: <Contact /> },
-      { path: 'Mycard', element: <Mycard /> },
-      { path: 'child', element: <Child /> },
-      { path: 'hotel', element: <Hotel/> },
-      { path: 'home', element: <Homee/>},
-      // { path: 'contact', element: <Contact /> },
-      // { path: 'contact', element: <Contact /> },
-      // { path: 'contact', element: <Contact /> },
-    ]
+    basename: '/photoweb' // <-- IMPORTANT for GitHub Pages
   }
-]);
+);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
